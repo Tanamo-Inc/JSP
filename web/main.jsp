@@ -5,6 +5,7 @@
 --%>
 
 
+
 <%@page import="java.util.Date"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!Doctype html>
@@ -22,13 +23,12 @@
 
     <body>
 
-        <%
-            String firstName = request.getParameter("firstname");
-            String lastName = request.getParameter("lastname");
-            String email = request.getParameter("email");
-            String gender = request.getParameter("gender");
-            String dob = request.getParameter("dob");
-        %>
+        <jsp:useBean id="bean"  class="tanamo.DB" />
+        <jsp:setProperty name="bean" property="firstName"/>
+        <jsp:setProperty name="bean" property="lastName"/>
+        <jsp:setProperty name="bean" property="email"/>
+        <jsp:setProperty name="bean" property="gender"/>
+        <jsp:setProperty name="bean" property="dob"/>
 
 
         <!------------------------This the Header sections--------------------->
@@ -50,6 +50,16 @@
             </div> 
 
         </div> 
+
+
+        <%
+            String firstName = request.getParameter("firstName");
+            String lastName = request.getParameter("lastName");
+            String email = request.getParameter("email");
+            String gender = request.getParameter("gender");
+            String dob = request.getParameter("dob");
+        %>
+
 
         <!------------------------This the Menu sections----------------------->
         <div id="menu_wrapper">
@@ -108,6 +118,24 @@
                     <h2>My Profile</h2>
 
                     <center> <img src="images/profile.png" /></center>
+
+                    <%
+                        int test = bean.myConnect();
+
+                        if (test == 1) {
+                            out.println("<script type=\"text/javascript\">");
+                            out.println("alert('Records added to the Database');");
+                            out.println("</script>");
+
+                        } else {
+                            out.println("<script type=\"text/javascript\">");
+                            out.println("alert('Records not added to the Database');");
+                            out.println("</script>");
+                        }
+
+
+                    %>
+
 
                     <an>First Name </an>: <%=firstName%>
                     <br/>
@@ -177,10 +205,10 @@
 
         </div>
 
-
         <%
             Date date = new Date();
         %>
+
 
         <!------------------------This the Footer sections--------------------->
         <div id="footer_wrapper">

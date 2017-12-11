@@ -24,14 +24,14 @@
                 <label>
                     FirstName<span class="req">*</span>
                 </label>
-                <input type="text" required autocomplete="off" name="firstname"/>
+                <input type="text" required autocomplete="off" name="firstName"/>
             </div>
 
             <div class="field-wrap">
                 <label>
                     LastName<span class="req">*</span>
                 </label>
-                <input type="text" required autocomplete="off" name="lastname"/>
+                <input type="text" required autocomplete="off" name="lastName"/>
             </div>
 
             <div class="field-wrap">

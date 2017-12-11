@@ -63,14 +63,14 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                <label>\n");
       out.write("                    FirstName<span class=\"req\">*</span>\n");
       out.write("                </label>\n");
-      out.write("                <input type=\"text\" required autocomplete=\"off\" name=\"firstname\"/>\n");
+      out.write("                <input type=\"text\" required autocomplete=\"off\" name=\"firstName\"/>\n");
       out.write("            </div>\n");
       out.write("\n");
       out.write("            <div class=\"field-wrap\">\n");
       out.write("                <label>\n");
       out.write("                    LastName<span class=\"req\">*</span>\n");
       out.write("                </label>\n");
-      out.write("                <input type=\"text\" required autocomplete=\"off\" name=\"lastname\"/>\n");
+      out.write("                <input type=\"text\" required autocomplete=\"off\" name=\"lastName\"/>\n");
       out.write("            </div>\n");
       out.write("\n");
       out.write("            <div class=\"field-wrap\">\n");
